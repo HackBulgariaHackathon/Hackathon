@@ -55,3 +55,9 @@ docs/_build/
 
 # PyBuilder
 target/
+# Do not track db files
+*.db
+*.sqlite
+*.sqlite3
+# Do not track Ninja-IDE project file
+*.nja
