@@ -1,0 +1,11 @@
+.navbar:first-child
+{
+    border-bottom: 5px solid #28AF5D;
+}
+
+footer
+{
+    background-color: black;
+    color: #fff;
+    padding-top: 50px;
+}
