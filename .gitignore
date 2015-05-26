@@ -61,3 +61,4 @@ target/
 *.sqlite3
 # Do not track Ninja-IDE project file
 *.nja
+*.komodoproject
