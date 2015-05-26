@@ -1,11 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
-
-class Role(models.Model):
-    name = models.CharField(max_length=50, null=False, blank=False)
-    comment = models.TextField()
 
 class Employee(models.Model):
     username = models.CharField(max_length=30, blank=False, null=False)
@@ -14,7 +8,7 @@ class Employee(models.Model):
     phone = models.CharField(max_length=10, null=True, blank=False)
     firstname = models.CharField(max_length=20, null=True, blank=False)
     lastname = models.CharField(max_length=20, null=True, blank=False)
-    role_id = models.ForeignKey(Role)
+
 
 class Vendor(models.Model):
     name = models.CharField(max_length=100)
@@ -23,6 +17,7 @@ class Vendor(models.Model):
 
     def __str__(self):
         return self.name + ' ' + self.email
+
 
 class License(models.Model):
     number = models.PositiveIntegerField()
