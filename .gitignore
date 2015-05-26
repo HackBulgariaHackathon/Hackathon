@@ -62,3 +62,5 @@ target/
 # Do not track Ninja-IDE project file
 *.nja
 *.komodoproject
+# Exclude .ropeproject from builds
+.ropeproject
