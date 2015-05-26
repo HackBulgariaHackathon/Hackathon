@@ -11,7 +11,7 @@ class VendorAdmin(admin.ModelAdmin):
         list_display = ('name', 'email', 'phone')
 
 class ComputerAdmin(admin.ModelAdmin):
-        pass
+        exclude = ('name')
 
 class LicenseAdmin(admin.ModelAdmin):
         list_display = ('number', 'name', 'expire')
