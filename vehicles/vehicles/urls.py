@@ -20,4 +20,3 @@ import vehicle.urls as vehicle_urls
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^vehicle/', include(vehicle_urls)),
-]

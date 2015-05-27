@@ -1,5 +1,9 @@
 """
+<<<<<<< HEAD
 WSGI config for mysite project.
+=======
+WSGI config for vehicles project.
+>>>>>>> 2116fc8bc9018ca3554971ee77b09499d2b29c82
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
