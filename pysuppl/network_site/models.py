@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.exceptions import ValidationError
+from django.contrib.auth.models import User
 from netaddr import *
 
 
@@ -84,6 +85,7 @@ class Vlan(models.Model):
 class NetworkProt(models.Model):
     port_name = models.CharField(max_length=10)
     device = models.ForeignKey(NetworkEquipment)
+    for_user = models.ForeignKey(User)
     to_where = models.ForeignKey(Host)
     vlans = models.ManyToManyField(Vlan)
     T_STATUS = (
