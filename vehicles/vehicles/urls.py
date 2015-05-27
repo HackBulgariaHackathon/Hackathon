@@ -1,4 +1,4 @@
-"""mysite URL Configuration
+"""vehicle URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.8/topics/http/urls/
@@ -20,3 +20,4 @@ import vehicle.urls as vehicle_urls
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^vehicle/', include(vehicle_urls)),
+]
