@@ -1,13 +1,18 @@
+#! -*- coding: utf-8 -*-
+
 from django.db import models
 
 # Create your models here.
 
 
 class Role(models.Model):
+
     name = models.CharField(max_length=50, null=False, blank=False)
     comment = models.TextField()
 
+
 class Employee(models.Model):
+
     username = models.CharField(max_length=30, blank=False, null=False)
     password = models.CharField(max_length=100, blank=False, null=False)
     email = models.EmailField()
@@ -16,7 +21,9 @@ class Employee(models.Model):
     lastname = models.CharField(max_length=20, null=True, blank=False)
     role_id = models.ForeignKey(Role)
 
+
 class Vendor(models.Model):
+
     name = models.CharField(max_length=100)
     email = models.EmailField()
     phone = models.CharField(max_length=15, null=True, blank=True)
@@ -24,7 +31,9 @@ class Vendor(models.Model):
     def __str__(self):
         return self.name + ' ' + self.email
 
+
 class License(models.Model):
+
     number = models.PositiveIntegerField()
     name = models.CharField(max_length=55)
     serial = models.CharField(max_length=25, null=False, blank=False)
@@ -36,6 +45,7 @@ class License(models.Model):
 
 
 class Computer(models.Model):
+
     vendor_id = models.ForeignKey(Vendor)
     serial = models.CharField(max_length=25, null=False, blank=False)
     date_bought = models.DateTimeField()
@@ -46,6 +56,7 @@ class Computer(models.Model):
 
 
 class Software(models.Model):
+
     name = models.CharField(max_length=100)
     comment = models.TextField()
     vendor_id = models.ForeignKey(Vendor)

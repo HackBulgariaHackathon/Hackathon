@@ -17,8 +17,10 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 import inventory.urls as inventory_urls
+import docs.urls as docs_urls
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^inventory/', include(inventory_urls)),
+    url(r'^docs/', include(docs_urls))
 ]

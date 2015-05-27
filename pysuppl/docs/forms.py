@@ -1,8 +1,11 @@
+#! -*- coding: utf-8 -*-
+
 from django.forms import ModelForm
 from .models import Document
 
+
 class DocumentForm(ModelForm):
-    class meta:
+
+    class Meta:
         model = Document
-        fields = ['serial', 'name', 'uploader', 'department', 'uploaded', 'doc',
-                  'uploaded']
+        exclude = [ 'uploaded', ]

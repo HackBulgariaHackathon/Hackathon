@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'inventory',
+    'docs',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -106,3 +107,7 @@ STATIC_URL = '/static/'
 # Absolute filesystem path to the directory that will hold
 # uploaded files
 MEDIA_ROOT = '/home/sevgo/Pojects/Hackathon/pysuppl/docs/media/'
+
+
+# max file size in bytes allowed to be uploaded
+MAX_FILE_SIZE = 2000000

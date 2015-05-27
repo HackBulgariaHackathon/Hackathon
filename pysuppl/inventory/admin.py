@@ -1,20 +1,36 @@
+#! -*- coding: utf-8 -*-
+
 from django.contrib import admin
 
+
 # Register your models here.
-from .models import Software,Computer, License, Vendor
+from .models import Software, Computer, License, Vendor
 
 
 class SoftwareAdmin(admin.ModelAdmin):
-        pass
+
+    list_display = ('name', )
+
 
 class VendorAdmin(admin.ModelAdmin):
-        list_display = ('name', 'email', 'phone')
+
+    ''' DOC STRING HERE '''
+
+    list_display = ('name', 'email', 'phone', )
+
 
 class ComputerAdmin(admin.ModelAdmin):
-        exclude = ('name')
+
+    ''' DOC STRING HERE '''
+
+    exclude = ('name', )
+
 
 class LicenseAdmin(admin.ModelAdmin):
-        list_display = ('number', 'name', 'expire')
+
+    ''' DOC STRING HERE '''
+
+    list_display = ('number', 'name', 'expire', )
 
 
 admin.site.register(Software, SoftwareAdmin)
