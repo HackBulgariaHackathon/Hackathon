@@ -102,3 +102,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Absolute filesystem path to the directory that will hold
+# uploaded files
+MEDIA_ROOT = '/home/sevgo/Pojects/Hackathon/pysuppl/docs/media/'

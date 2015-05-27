@@ -4,6 +4,7 @@ from .forms import DocumentForm
 # Create your views here.
 
 def upload_doc(request):
+    """ DOCSTRING """
     if request.method == 'POST':
         form = DocumentForm(request.POST, request.FILES)
         if form.is_valid():
