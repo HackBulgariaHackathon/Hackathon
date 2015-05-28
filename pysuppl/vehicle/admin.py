@@ -7,7 +7,7 @@ from .models import Vehicle, Paten_list
 
 
 class VehicleAdmin(admin.ModelAdmin):
-    vehicle_display = ('number', 'status', 'date_reserved', 'date_returned', 'user_id')
+    vehicle_display = ('number', 'status', 'user_id')
 
 
 class Paten_listAdmin(admin.ModelAdmin):
