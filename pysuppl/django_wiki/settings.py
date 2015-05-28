@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'wiki',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -50,7 +51,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'pysuppl.urls'
+ROOT_URLCONF = 'django_wiki.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'pysuppl.wsgi.application'
+WSGI_APPLICATION = 'django_wiki.wsgi.application'
 
 
 # Database

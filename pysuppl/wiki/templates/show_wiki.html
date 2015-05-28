@@ -1,0 +1,5 @@
+<h1>Wiki:</h1>
+
+{% for single_info in wiki %}
+<h2><a href="{% url 'wiki:show_text' wiki.id %}"><h4>{{ wiki.title }}</h4></a></h2>
+{% endfor %}
