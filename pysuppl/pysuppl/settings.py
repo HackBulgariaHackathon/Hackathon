@@ -102,11 +102,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
+# STATIC_ROOT = '/home/sevgo/Projects/Hackathon/pysuppl/pusuppl/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# STATIC_URL = '/static/'
 STATIC_URL = '/static/'
 
 # Absolute filesystem path to the directory that will hold
 # uploaded files
-MEDIA_ROOT = '/home/sevgo/Pojects/Hackathon/pysuppl/docs/media/'
+# MEDIA_ROOT = '/home/sevgo/Pojects/Hackathon/pysuppl/docs/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'docs/media')
+
+MEDIA_URL = '/media/'
 
 
 # max file size in bytes allowed to be uploaded

@@ -14,7 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import include, url
+from django.conf import settings
 from django.contrib import admin
+from django.conf.urls.static import static
 
 import inventory.urls as inventory_urls
 import docs.urls as docs_urls
@@ -24,3 +26,6 @@ urlpatterns = [
     url(r'^inventory/', include(inventory_urls)),
     url(r'^docs/', include(docs_urls))
 ]
+
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

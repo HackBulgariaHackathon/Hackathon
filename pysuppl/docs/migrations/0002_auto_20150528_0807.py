@@ -1,0 +1,26 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
+from django.db import models, migrations
+import datetime
+from django.utils.timezone import utc
+
+
+class Migration(migrations.Migration):
+
+    dependencies = [
+        ('docs', '0001_initial'),
+    ]
+
+    operations = [
+        migrations.RemoveField(
+            model_name='document',
+            name='doc',
+        ),
+        migrations.AddField(
+            model_name='document',
+            name='file',
+            field=models.FileField(default=datetime.datetime(2015, 5, 28, 8, 7, 47, 425329, tzinfo=utc), upload_to='files'),
+            preserve_default=False,
+        ),
+    ]

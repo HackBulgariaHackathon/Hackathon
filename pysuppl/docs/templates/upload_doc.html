@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html />
 <html>
     <head><title>Test</title></head>
@@ -5,7 +6,7 @@
         <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form }}
-            <button type="Submit">Submit</button>
+            <input type="Submit" value="Upload" />
         </form>
     </body>
 </html>
