@@ -1,4 +1,4 @@
-"""pysuppl URL Configuration
+"""vehicle URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.8/topics/http/urls/
@@ -14,18 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import include, url
-from django.conf import settings
 from django.contrib import admin
-from django.conf.urls.static import static
-
-import inventory.urls as inventory_urls
-import docs.urls as docs_urls
+import vehicle.urls as vehicle_urls
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^inventory/', include(inventory_urls)),
-    url(r'^docs/', include(docs_urls))
+    url(r'^vehicle/', include(vehicle_urls)),
 ]
-
-
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

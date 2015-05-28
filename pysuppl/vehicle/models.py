@@ -1,6 +1,12 @@
 from django.db import models
 # Create your models here.
 
+class Paten_list(models.Model):
+    user = models.CharField(max_length=50, null=False, blank=False)
+
+    def __str__(self):
+        return "{}".format(self.user)
+
 
 class Vehicle(models.Model):
     status = models.CharField(max_length=10, null=False, blank=False)
@@ -11,10 +17,3 @@ class Vehicle(models.Model):
     def __str__(self):
         return "{} - {} - {}".format
         (self.status, self.date_reserved, self.date_returned)
-
-
-class Paten_list(models.Model):
-    user = models.CharField(max_length=50, null=False, blank=False)
-
-    def __str__(self):
-        return "{}".format(self.user)
