@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    <head><title>documents</title></head>
+    <body>
+        <ul>
+            {% for doc in documents %}
+            <li>{{ doc.serial }} {{ doc.name }} {{ doc.get_path }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

@@ -14,4 +14,10 @@ class Document(models.Model):
     file = models.FileField(upload_to="files")
 
     def __uicode__(self):
-        return self.name + ' ' + self.file
+        return self.name
+
+    def __str__(self):
+        return self.name
+
+    def get_path(self):
+        return str(self.file)
