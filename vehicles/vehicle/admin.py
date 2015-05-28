@@ -11,7 +11,7 @@ class VehicleAdmin(admin.ModelAdmin):
 
 
 class Paten_listAdmin(admin.ModelAdmin):
-    list_display = ('name')
+    list_display = ('user', )
 
 admin.site.register(Vehicle, VehicleAdmin)
 admin.site.register(Paten_list, Paten_listAdmin)
