@@ -53,7 +53,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 
-ROOT_URLCONF = 'vehicles.urls'
+ROOT_URLCONF = 'pysuppl.urls'
 
 TEMPLATES = [
     {
@@ -72,7 +72,7 @@ TEMPLATES = [
 ]
 
 
-WSGI_APPLICATION = 'vehicles.wsgi.application'
+WSGI_APPLICATION = 'pysuppl.wsgi.application'
 
 
 

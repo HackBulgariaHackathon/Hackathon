@@ -13,7 +13,8 @@ class Vehicle(models.Model):
     date_reserved = models.DateTimeField()
     date_returned = models.DateTimeField()
     user_id = models.ForeignKey(Paten_list)
-
+    number = models.CharField(max_length=6, null=False, blank=False
+        )
     def __str__(self):
-        return "{} - {} - {}".format
-        (self.status, self.date_reserved, self.date_returned)
+        return "{} - {} - {} - {} - {}".format
+        (self.number, self.status, self.date_reserved, self.date_returned, self.user_id)
