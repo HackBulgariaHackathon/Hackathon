@@ -38,7 +38,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'inventory',
     'docs',
 )
 
@@ -103,7 +102,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 # STATIC_ROOT = '/home/sevgo/Projects/Hackathon/pysuppl/pusuppl/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, '/static')
 
 # STATIC_URL = '/static/'
 STATIC_URL = '/static/'
@@ -114,7 +113,3 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'docs/media')
 
 MEDIA_URL = '/media/'
-
-
-# max file size in bytes allowed to be uploaded
-MAX_FILE_SIZE = 2000000

@@ -11,7 +11,7 @@ class Document(models.Model):
     tags = models.TextField(null=True, blank=False)
     serial = models.CharField(max_length=25)
     uploaded = models.DateTimeField(auto_now_add=True)
-    file = models.FileField(upload_to="files")
+    file = models.FileField(upload_to='documents/%Y/%m')
 
     def __uicode__(self):
         return self.name

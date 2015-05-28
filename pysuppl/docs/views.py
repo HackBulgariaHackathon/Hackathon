@@ -42,7 +42,7 @@ def upload(request):
             print("***************************")
             print("###############")
             form.save()
-            return redirect('/admin')
+            return redirect('/docs/index')
 
     else:
         form = DocumentForm(user=None)
