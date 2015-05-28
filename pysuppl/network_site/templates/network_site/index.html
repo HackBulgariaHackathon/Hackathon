@@ -33,20 +33,10 @@
                                     <li><a href="#">One more separated link</a></li>
                                 </ul>
                             </li>
-                            <form action="" method="POST" accept-charset="utf-8" class="navbar-form navbar-right">
+                            <li><a title="">Hello, {{ username }}</a></li>
+                            <form action="{% url 'network:logout' %}" accept-charset="utf-8" class="navbar-form navbar-right">
                             {% csrf_token %}
-                            {% if not user %}
-                                <div class="form-group">
-                                    <input type="text", class="form-control", name="username", placeholder="username"/>
-                                </div>
-                                <div class="form-group">
-                                    <input type="password", class="form-control", name="password", placeholder="password"/>
-                                </div>
-                                <button type="submit" class="btn btn-success">Login</button>
-                                {% else %}
-                                <li><a href="#" title="">Hello, {{ user }}</a></li>
-                                <button type="submit" class="btn btn-success">Logout</button>
-                            {% endif %}
+                            <button type="submit" class="btn btn-danger">Logout</button>
                             </form>
                         </ul>
                     </div>
