@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User, Group
 # Create your views here.
 from django.contrib.auth import models
+from django.conf import settings
 
 
 
@@ -13,19 +14,13 @@ from django.contrib.auth import models
 def index(request):
     current_user = request.user
     group = current_user.groups.get()
-    # group = request.user.groups.get()
-    print(group)
-
     users = group.user_set.all()
-    print(users)
-    # documents = [Document.objects.filter(uploader=uploader.id) for uploader in users]
-    # documents = []
-    # for user in users:
-    user = users[0]
-    documents = Document.objects.get(uploader=user.id)
+    prefix = settings.MEDIA_URL
+    # user = users[0]
+    documents = []
+    for user in users:
+        documents += Document.objects.filter(uploader=user.id)
 
-    print("Index")
-    print(documents)
     return render(request, 'docs.html', locals())
 
 

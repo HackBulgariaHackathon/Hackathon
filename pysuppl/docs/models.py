@@ -18,6 +18,3 @@ class Document(models.Model):
 
     def __str__(self):
         return self.name
-
-    def get_path(self):
-        return str(self.file)

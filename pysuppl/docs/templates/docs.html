@@ -2,9 +2,12 @@
 <html>
     <head><title>documents</title></head>
     <body>
+        <strong>{{ group }}</strong>
         <ul>
             {% for doc in documents %}
-            <li>{{ doc.serial }} {{ doc.name }} {{ doc.get_path }}</li>
+            <li>
+                {{ doc.serial }} - <a href="{{ prefix }}{{ doc.file }}">{{ doc.name }}<a/>
+            </li>
             {% endfor %}
         </ul>
     </body>
