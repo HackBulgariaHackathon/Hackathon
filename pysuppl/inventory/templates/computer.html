@@ -3,3 +3,23 @@
 <p>Computer serial: {{ computer.serial }}</p>
 <p>Date computer was bought: {{ computer.date_bought }}</p>
 <p>Computer vendor: {{ computer.vendor_id.name }}</p>
+
+<form method="POST" action="/inventory/{{ computer.id }}/delete/">
+{% csrf_token %}
+<input type="submit" value="Delete" />
+</form>
+<form method="POST" action="/inventory/{{ computer.id }}/edit/">
+{% csrf_token %}
+<input type="submit" value="Edit">
+</form>
+<!--<div>
+<a href="">
+<label>Computer name: {{ computer.name }}</label>
+<label>Computer serial: {{ computer.serial }}</label>
+<label>Date computer was bought: {{ computer.date_bought }}</label>
+<label>Vendor: {{ computer.vendor_id.name }}</label>
+<p>was deleted!</p>
+</a>
+</div>
+</form>
+-->
