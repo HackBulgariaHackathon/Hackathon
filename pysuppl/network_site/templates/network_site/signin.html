@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{%load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,17 +15,20 @@
     <!-- Bootstrap core CSS -->
     <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
 
+    <!-- Custom styles for this template -->
+    <link href="{% static "css/signin.css" %}" rel="stylesheet">
+
   </head>
 
   <body>
 
     <div class="container">
 
-      <form class="form-signin" action="" method="POST">
+      <form class="form-signin" method="POST">
       {% csrf_token %}
         <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputUsername" class="sr-only">User name</label>
-        <input name="username" type="text" id="inputUsername" class="form-control" placeholder="User Name" required autofocus>
+        <label for="inputUser" class="sr-only">Email address</label>
+        <input name="username" type="text" id="inputUser" class="form-control" placeholder="User Name" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
         <div class="checkbox">
