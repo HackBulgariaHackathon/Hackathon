@@ -1,0 +1,62 @@
+from django.contrib import admin
+
+from .models import Wiki
+
+# Register your models here.
+
+admin.site.register(Wiki)
+
+/////
+
+from django.db import models
+
+# Create your models here.
+
+class Wiki(models.Model):
+    title = models.CharField(max_length=50)
+    text = models.CharField(max_length=1000)
+    data_created = models.DateTimeField(auto_now_add=True)
+
+from django.conf.urls import paterns, url
+# from .views import get_computers
+from . import views
+
+urlpatterns = [
+    url(r'^$', 'show_wiki', name='wiki'),
+    url(r'^wiki/(?P<wiki_id>[0-9]+)/$', 'show_text', name='show_text'),
+
+//////
+
+from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponse, HttpResponseNotFound
+from django.contrib.auth.decorators import login_required
+
+from models import Wiki
+
+# Create your views here.
+
+
+def show_wiki(request):
+    wiki = Wiki.objects.all()
+    return render(request, 'show_wiki.html', locals())
+
+def show_text(request, wiki_id):
+    title = get_object_or_404(Wiki, pk=wiki_id)
+    current_user = request.user
+    txt = Wiki.objects.filter(title=title).select('text')
+    return render(request, 'show_text.html', locals())
+
+
+@login_required
+def edit_text(request):
+    pass
+
+
+/////
+
+
+<h1>Wiki:</h1>
+
+{% for single_info in wiki %}
+<h2><a href="{% url 'wiki:show_text' wiki.id %}"><h4>{{ wiki.title }}</h4></a></h2>
+{% endfor %}

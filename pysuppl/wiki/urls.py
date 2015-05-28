@@ -1,9 +1,8 @@
-
-from django.conf.urls import paterns, url
-# from .views import get_computers
+from django.conf.urls import patterns, url
+from django.conf import settings
 from . import views
 
-urlpatterns = [
-    url(r'^$', 'show_wiki', name='wiki'),
-    url(r'^wiki/(?P<wiki_id>[0-9]+)/$', 'show_text', name='show_text'),
-
+urlpatterns = patterns('wiki.views',
+    url(r'^wiki/$', 'show_wiki', name='wiki'),
+    url(r'text/(?P<wiki_id>[0-9]+)/$', 'show_text', name='text'),
+)

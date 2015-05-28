@@ -14,11 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import include, url
+from django.conf import settings
 from django.contrib import admin
+from django.conf.urls.static import static
 
-from wiki import urls as wiki_urls
+import wiki.urls as wiki_urls
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'', include(wiki_urls))
+    url(r'', include(wiki_urls)),
+    url(r'^wiki:$', include(wiki_urls)),
 ]
