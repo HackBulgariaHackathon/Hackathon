@@ -11,5 +11,4 @@ class ComputerForm(ModelForm):
 class SoftwareForm(ModelForm):
     class Meta:
         model = Software
-        fields = ['name', 'description', 'vendor_id',
-                  'license_id', 'installed']
+        fields = ['name', 'description', 'vendor_id', 'license_id']

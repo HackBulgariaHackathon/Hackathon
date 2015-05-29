@@ -38,7 +38,6 @@ class Software(models.Model):
     description = models.TextField()
     vendor_id = models.ForeignKey(Vendor)
     license_id = models.ForeignKey(License)
-    installed = models.ManyToManyField(Computer)
 
     def __str__(self):
         return "{}".format(self.name)

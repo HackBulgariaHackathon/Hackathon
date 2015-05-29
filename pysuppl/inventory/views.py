@@ -7,10 +7,6 @@ from datetime import datetime
 from django.contrib.auth.models import Group, User
 
 
-def add_employee(request):
-    html = "<html><body>Add employee's name:</body></html>"
-
-
 def get_computers(request):
     computers = Computer.objects.all()
     return render(request, "index.html", locals())
@@ -37,7 +33,8 @@ def add_computer(request):
     serial = request.POST.get("computer_serial")
     date_bought = datetime.strptime(request.POST.get("date_bought"), '%d.%m.%Y')
     owner = User(request.POST.get("owner_email"))
-    computer = Computer(name=computer_name, serial=serial, date_bought=date_bought, owner=owner, vendor_id=vendor_id)
+    computer = Computer(name=computer_name, serial=serial,
+                        date_bought=date_bought, owner=owner, vendor_id=vendor_id)
     computer.save()
     return redirect('/inventory/computers')
 
@@ -75,21 +72,37 @@ def get_software_info(request):
     return render(request, "software.html", locals())
 
 
+def new_software(request):
+    vendors = Vendor.objects.all()
+    all_license = License.objects.all()
+    return render(request, "add_software.html", locals())
+
+
 def add_software(request):
     software_name = request.POST.get("software_name")
     description = request.POST.get("description")
-    vendor = request.POST.get("vendor")
-    license = request.POST.get("license")
-    # installed = Software.objects.get.
-    computer_id = Software.objects.get(name=software_name)
-    all_computers = Software.objects.all()
-    installed = Computer.objects.get(pk=request.POST.get("computer_id"))
-
-    installed.software_set.all()
-
-
+    vendor_id = Vendor.objects.get(pk=request.POST.get("vendor_id"))
+    license = License.objects.get(pk=request.POST.get("license_id"))
     software = Software(name=software_name, description=description,
-        vendor_id=vendor, license_id=license, installed=installed)
+                        vendor_id=vendor_id, license_id=license)
     software.save()
     return redirect('/inventory/all_software')
 
+
+def delete_software(request, software_id):
+    software = get_object_or_404(Software, pk=software_id)
+    software.delete()
+    return redirect('/inventory/all_software')
+
+
+def edit_software(request, software_id):
+    software = get_object_or_404(Software, pk=software_id)
+    form = SoftwareForm(instance=software)
+    if request.POST:
+        form = SoftwareForm(request.POST, instance=software)
+        if form.is_valid():
+            form.save()
+
+            return redirect('/inventory/all_software')
+
+    return render(request, 'edit_software.html', locals())

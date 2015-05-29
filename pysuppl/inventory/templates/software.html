@@ -4,11 +4,11 @@
 <p>Software vendor: {{ software.vendor_id.name }}</p>
 <p>License: {{ software.license_id.name }}</p>
 
-<form method="POST" action="/inventory/{{ software.id }}/delete/">
+<form method="POST" action="/inventory/all_software/{{ software.id }}/delete/">
 {% csrf_token %}
 <input type="submit" value="Delete" />
 </form>
-<form method="POST" action="/inventory/{{ software.id }}/edit/">
+<form method="POST" action="/inventory/all_software/{{ software.id }}/edit/">
 {% csrf_token %}
 <input type="submit" value="Edit">
 </form>
