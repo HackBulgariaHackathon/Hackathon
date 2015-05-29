@@ -1,10 +1,29 @@
-<h1>{{ computer.name }}</h1>
+{% extends "base.html" %}
 
-<p>Computer serial: {{ computer.serial }}</p>
+{% block content %}
+<!-- <p>Computer serial: {{ computer.serial }}</p>
 <p>Date computer was bought: {{ computer.date_bought }}</p>
 <p>Computer vendor: {{ computer.vendor_id.name }}</p>
 <p>Owner: {{ computer.owner.email }}</p>
-
+ -->
+ <table class="table table-hover ">
+<thead>
+    <tr>
+        <th>S/N</th>
+        <th>DateBought</th>
+        <th>Vendor</th>
+        <th>Owner</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>{{computer.seriall}}</td>
+        <td>{{ computer.date_bought}}</td>
+        <td>{{computer.vendor_id.name }}</td>
+        <td>{{computer.owner.email }}</td>
+    </tr>
+</tbody>
+</table>
 <form method="POST" action="/inventory/{{ computer.id }}/delete/">
 {% csrf_token %}
 <input type="submit" value="Delete" />
@@ -13,3 +32,5 @@
 {% csrf_token %}
 <input type="submit" value="Edit">
 </form>
+{% endblock %}
+

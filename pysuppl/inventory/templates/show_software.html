@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+{% block content %}
 <h1>All Software</h1>
 {% for software in all_software %}
 <h2>
@@ -7,3 +9,4 @@
 <p>
     <a href="add_software"><button>Add new software</button></a>
 </p>
+{% endblock %}

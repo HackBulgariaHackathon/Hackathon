@@ -1,4 +1,6 @@
-<form method="POST">
+{% extends "base.html" %}
+{% block content %}
+<form method="POST"> <!--  action="/inventory/add_software/"> -->
 {% csrf_token %}
 <input name="software_id" type="hidden" value="{{ software.id }}"/>
 <div>
@@ -29,3 +31,4 @@
 </div>
  <input type="submit" value="Add"/>
 </form>
+{% endblock %}

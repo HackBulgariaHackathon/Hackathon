@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+{% block content %}
 <h1>{{ software.name }}</h1>
 
 <p>Software description: {{ software.description }}</p>
@@ -12,3 +14,4 @@
 {% csrf_token %}
 <input type="submit" value="Edit">
 </form>
+{% endblock %}

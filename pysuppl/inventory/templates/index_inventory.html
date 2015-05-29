@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+{% block content %}
 <h1>All computers:</h1>
 
 {% for computer in computers %}
@@ -8,3 +10,4 @@
 <p>
     <a href="new_computer"><button>Add new computer</button></a>
 </p>
+{% endblock %}

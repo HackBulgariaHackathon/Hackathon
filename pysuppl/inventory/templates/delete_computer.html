@@ -1,3 +1,5 @@
+{% extends ""base.html"%}
+{% block content %}
 <form method="POST" action="/inventory/show_computer">
 {% csrf_token %}
 <div>
@@ -8,3 +10,4 @@
 <p>was deleted!</p>
 </div>
 </form>
+{% endblock %}
