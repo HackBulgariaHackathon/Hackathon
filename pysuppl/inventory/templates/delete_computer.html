@@ -1,0 +1,10 @@
+<form method="POST" action="/inventory/show_computer">
+{% csrf_token %}
+<div>
+<label>Computer name: {{ computer.name }}</label>
+<label>Computer serial: {{ computer.serial }}</label>
+<label>Date computer was bought: {{ computer.date_bought }}</label>
+<label>Vendor: {{ computer.vendor_id.name }}</label>
+<p>was deleted!</p>
+</div>
+</form>
