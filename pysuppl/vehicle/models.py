@@ -1,7 +1,6 @@
 from django.db import models
 # Create your models here.
 
-
 class Paten_list(models.Model):
     user = models.CharField(max_length=50, null=False, blank=True)
 

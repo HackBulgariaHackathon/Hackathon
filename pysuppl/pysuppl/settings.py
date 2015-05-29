@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'vehicle',
     'docs',
     'wiki',
+    'vehicle'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -71,6 +72,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'pysuppl.wsgi.application'
 
