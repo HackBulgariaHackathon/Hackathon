@@ -1,16 +1,11 @@
 from django.db import models
+from django.contrib.auth.models import User
 # Create your models here.
-
-class Paten_list(models.Model):
-    user = models.CharField(max_length=50, null=False, blank=True)
-
-    def __str__(self):
-        return "{}".format(self.user)
 
 
 class Vehicle(models.Model):
     status = models.CharField(max_length=11, null=False, blank=False)
-    user_id = models.ForeignKey(Paten_list)
+    user_id = models.ForeignKey(User)
     number = models.CharField(max_length=6, null=False, blank=False)
 
     def __str__(self):
