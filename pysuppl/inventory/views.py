@@ -9,7 +9,8 @@ from django.contrib.auth.models import Group, User
 
 def get_computers(request):
     computers = Computer.objects.all()
-    return render(request, "index.html", locals())
+    print("Make ti trun")
+    return render(request, "index_inventory.html", locals())
 
 
 def get_computer_info(request):
