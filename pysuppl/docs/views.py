@@ -10,7 +10,7 @@ from django.conf import settings
 
 
 
-#@login_required
+@login_required(login_url='/login')
 def index(request):
     current_user = request.user
     group = current_user.groups.get()
@@ -24,7 +24,7 @@ def index(request):
     return render(request, 'docs.html', locals())
 
 
-@login_required
+@login_required(login_url='/login')
 def upload(request):
 
     if request.method == 'POST':
