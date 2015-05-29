@@ -1,0 +1,20 @@
+{% extends "base.html"%}
+
+{% block content %}
+<table class="table table-hover ">
+<thead>
+    <tr>
+        <th>Wiki Title</th>
+        <th>Wiki Content</th>
+    </tr>
+</thead>
+<tbody>
+{% for single_wiki in wiki %}
+    <tr>
+        <td>{{single_wiki.title}}</td>
+        <td>{{single_wiki.text}}</td>
+    </tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}

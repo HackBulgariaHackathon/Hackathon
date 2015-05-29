@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+
+{% block title%}
+    index
+{% endblock %}
+
+{% load staticfiles %}
+{% block login%}
+    <li><a title="">Hello, {{ username }}</a></li>
+    <form action="{% url 'network:logout' %}" accept-charset="utf-8" class="navbar-form navbar-right">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Logout</button>
+    </form>
+{% endblock %}
+
+{% block content %}
+    {% for network in networks %}
+        <p>{{ network }}</p>
+    {% endfor %}
+ {% endblock %}
