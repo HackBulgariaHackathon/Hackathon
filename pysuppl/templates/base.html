@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- {% load staticfiles %} -->
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+        {% block title %}
+        {% endblock %}
+        </title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <!-- <link rel="stylesheet" href="{% static 'css/form.css' %}"> -->
+
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+        {% block load_css %}
+        {% endblock %}
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/" title="">LOGO</a>
+                    <!-- <p class="navbar-text">Text here if we want</p> -->
+                    <div class="navbar-header navbar-right">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#" title="">Home</a></li>
+                            <li><a href="#" title="">Home</a></li>
+                            <li><a href="/wiki/show_wiki" title="">Wiki</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Documents<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="/docs/index">Show all documents</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="/docs/upload">Upload documents</a></li>
+                                    <li class="divider"></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Vehicle<span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="/vehicle/show_all">Show all vehicles</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="/vehicle/show_paten_list">Drive records</a></li>
+                                    <li class="divider"></li>
+                                </ul>
+                            </li>
+                            {% block login%}
+                                <!-- <li><a title="">Hello, {{ username }}</a></li> -->
+                                <form action="{% url 'network:logout' %}" accept-charset="utf-8" class="navbar-form navbar-right">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger">Logout</button>
+                                </form>
+                            {% endblock %}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="col-md-10 col-md-offset-1">
+            {% block content %}
+            {% endblock %}
+        </main>
+        <!-- start footer -->
+        <footer class="navbar navbar-fixed-bottom">
+            <div class="container">
+                <p>Copyright HackBulgaria</p>
+            </div>
+        </footer>
+        <!-- end footer -->
+        <!-- <script src="{% static "js/jQuery.js" %}" type="text/javascript"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js" type="text/javascript"></script>
+        <!-- <script src="{% static "js/bootstrap.min.js" %}" type="text/javascript"></script> -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    </body>
+</html>

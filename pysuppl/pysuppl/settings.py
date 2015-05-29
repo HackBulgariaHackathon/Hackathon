@@ -18,7 +18,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'cp^8)@^t9xrs985s7jr=+ckcnds*-aa+h&!)3edsnly+6iysmz'
 
@@ -38,7 +37,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'network_site',
+    'vehicle',
     'docs',
+    'wiki',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'pysuppl.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -89,7 +91,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'EET'
 
 USE_I18N = True
 
@@ -103,7 +105,6 @@ USE_TZ = True
 
 # STATIC_ROOT = '/home/sevgo/Projects/Hackathon/pysuppl/pusuppl/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
 # STATIC_URL = '/static/'
 STATIC_URL = '/static/'
 
@@ -111,5 +112,4 @@ STATIC_URL = '/static/'
 # uploaded files
 # MEDIA_ROOT = '/home/sevgo/Pojects/Hackathon/pysuppl/docs/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'docs/media')
-
 MEDIA_URL = '/media/'

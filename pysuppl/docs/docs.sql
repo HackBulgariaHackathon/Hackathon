@@ -1,6 +1,6 @@
 PRAGMA foreign_keys=ON;
 BEGIN TRANSACTION;
-CREATE TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL);
+CREATE IF NOT EXISTS TABLE "django_migrations" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "app" varchar(255) NOT NULL, "name" varchar(255) NOT NULL, "applied" datetime NOT NULL);
 INSERT INTO "django_migrations" VALUES(1,'contenttypes','0001_initial','2015-05-26 11:20:39.864736');
 INSERT INTO "django_migrations" VALUES(2,'auth','0001_initial','2015-05-26 11:20:39.913238');
 INSERT INTO "django_migrations" VALUES(3,'admin','0001_initial','2015-05-26 11:20:39.989241');
