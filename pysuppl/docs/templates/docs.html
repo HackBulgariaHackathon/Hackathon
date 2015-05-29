@@ -1,17 +1,22 @@
-<!DOCTYPE html>
-<html>
-    <head><title>documents</title></head>
-    <body>
-        <table>
-            <tr><th colspan=3><strong>Department: {{ group }}</strong></th></tr>
-            <tr><th>S/N</th><th>Link</th><th>Uploader</th></tr>
-            {% for doc in documents %}
-            <tr>
-                <td>{{ doc.serial }}</td>
-                <td><a href="{{ prefix }}{{ doc.file }}">{{ doc.name }}</a></td>
-                <td>{{ doc.uploader }}</td>
-            </tr>
-            {% endfor %}
-        </table>
-    </body>
-</html>
+{% extends "base.html"%}
+{% block content %}
+<table class="table table-hover ">
+<thead>
+    <tr>
+        <th>S/N</th>
+        <th>Link</th>
+        <th>Uploader</th>
+    </tr>
+</thead>
+<tbody>
+{% for doc in documents %}
+    <tr>
+        <td>{{doc.serial}}</td>
+        <td><a href="{{ prefix }}{{ doc.file }}">{{ doc.name }}</a></td>
+        <td>{{doc.uploader}}</td>
+    </tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}
+
