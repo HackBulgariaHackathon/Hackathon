@@ -1,0 +1,15 @@
+<h1>{{ computer.name }}</h1>
+
+<p>Computer serial: {{ computer.serial }}</p>
+<p>Date computer was bought: {{ computer.date_bought }}</p>
+<p>Computer vendor: {{ computer.vendor_id.name }}</p>
+<p>Owner: {{ computer.owner.email }}</p>
+
+<form method="POST" action="/inventory/{{ computer.id }}/delete/">
+{% csrf_token %}
+<input type="submit" value="Delete" />
+</form>
+<form method="POST" action="/inventory/{{ computer.id }}/edit/">
+{% csrf_token %}
+<input type="submit" value="Edit">
+</form>

@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'vehicle',
     'docs',
     'wiki',
+    'inventory',
 )
 
 MIDDLEWARE_CLASSES = (

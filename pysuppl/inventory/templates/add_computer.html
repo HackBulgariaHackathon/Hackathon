@@ -1,0 +1,37 @@
+<form method="POST" action="/inventory/add_computer/">
+{% csrf_token %}
+<input name="computer_id" type="hidden" value="{{ computer.id }}"/>
+<div>
+<label>Computer name:<br></label>
+<input name="computer_name" type="text" />
+</div>
+
+<div>
+<label>Computer serial:<br></label>
+<input name="computer_serial" type="text" />
+</div>
+
+<div>
+<label>Date computer was bought: <br></label>
+<input name="date_bought" type="date" />
+</div>
+
+<div>
+    <label>Owner: <br></label>
+    <select name="owner_email">
+    {% for owner in owners %}
+        <option value="{{ owner.id }}"> {{ owner.email }} </option>
+    {% endfor %}
+    </select>
+</div>
+
+<div>
+<label>Vendor: <br></label>
+<select name="vendor_id">
+    {% for vendor in vendors %}
+        <option value="{{ vendor.id }}"> {{ vendor.name }}</option>
+    {% endfor %}
+</select>
+</div>
+ <input type="submit" value="Add" />
+</form>

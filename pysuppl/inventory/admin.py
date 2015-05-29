@@ -14,21 +14,15 @@ class SoftwareAdmin(admin.ModelAdmin):
 
 class VendorAdmin(admin.ModelAdmin):
 
-    ''' DOC STRING HERE '''
-
     list_display = ('name', 'email', 'phone', )
 
 
 class ComputerAdmin(admin.ModelAdmin):
 
-    ''' DOC STRING HERE '''
-
     exclude = ('name', )
 
 
 class LicenseAdmin(admin.ModelAdmin):
-
-    ''' DOC STRING HERE '''
 
     list_display = ('number', 'name', 'expire', )
 
