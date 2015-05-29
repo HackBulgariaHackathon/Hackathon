@@ -36,7 +36,7 @@ from network_site import urls as network_urls
 from vehicle import urls as vehicle_urls
 from docs import urls as docs_urls
 from wiki import urls as wiki_urls
-  7 # from django.conf import settings
+from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
@@ -46,3 +46,5 @@ urlpatterns = [
     url(r'^docs/', include(docs_urls)),
     url(r'^wiki/', include(wiki_urls)),
 ] + static("/static/", document_root="/home/rastamandito/Documents/Django_laptop/Hackathon/pysuppl/pysuppl/static/ ")
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
