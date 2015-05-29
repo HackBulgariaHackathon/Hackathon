@@ -35,7 +35,7 @@ class Computer(models.Model):
 
 class Software(models.Model):
     name = models.CharField(max_length=100)
-    comment = models.TextField()
+    description = models.TextField()
     vendor_id = models.ForeignKey(Vendor)
     license_id = models.ForeignKey(License)
     installed = models.ManyToManyField(Computer)

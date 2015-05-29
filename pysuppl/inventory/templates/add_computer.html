@@ -17,6 +17,15 @@
 </div>
 
 <div>
+    <label>Owner: <br></label>
+    <select name="owner_email">
+    {% for owner in owners %}
+        <option value="{{ owner.id }}"> {{ owner.email }} </option>
+    {% endfor %}
+    </select>
+</div>
+
+<div>
 <label>Vendor: <br></label>
 <select name="vendor_id">
     {% for vendor in vendors %}

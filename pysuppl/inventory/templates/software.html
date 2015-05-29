@@ -1,0 +1,14 @@
+<h1>{{ software.name }}</h1>
+
+<p>Software description: {{ software.description }}</p>
+<p>Software vendor: {{ software.vendor_id.name }}</p>
+<p>License: {{ software.license_id.name }}</p>
+
+<form method="POST" action="/inventory/{{ software.id }}/delete/">
+{% csrf_token %}
+<input type="submit" value="Delete" />
+</form>
+<form method="POST" action="/inventory/{{ software.id }}/edit/">
+{% csrf_token %}
+<input type="submit" value="Edit">
+</form>

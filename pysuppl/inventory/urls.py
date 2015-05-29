@@ -13,6 +13,7 @@ urlpatterns = [
         views.delete_computer, name='delete_computer'),
     url(r'^(?P<computer_id>[0-9]+)/edit/$',
         views.edit_computer, name='edit_computer'),
-    # url(r'^/edit/$',
-    #     views.edit_computer, name='edit_computer'),
+    url(r'^all_software/$', views.get_software),
+    url(r'^all_software/show_software$', views.get_software_info),
+    url(r'^all_software/add_software/$', views.add_software),
 ]

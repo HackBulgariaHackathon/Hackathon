@@ -1,0 +1,41 @@
+<form method="POST" action="/inventory/add_software/">
+{% csrf_token %}
+<input name="software_id" type="hidden" value="{{ software.id }}"/>
+<div>
+<label>Software name:<br></label>
+<input name="software_name" type="text" />
+</div>
+
+<div>
+<label>Software serial:<br></label>
+<input name="description" type="text" />
+</div>
+
+<div>
+<label>Software vendor: <br></label>
+<select name="vendor">
+    {% for vendor in vendors %}
+        <option type="{{ vendor.id }}"> {{ vendor.name }} </option>
+    {% endfor %}
+</select>
+</div>
+
+<div>
+    <label>License: <br></label>
+    <select name="license">
+    {% for license in all_license %}
+        <option value="{{ license.id }}"> {{ license.name }} </option>
+    {% endfor %}
+    </select>
+</div>
+
+<!--<div>
+<label>Vendor: <br></label>
+<select name="vendor_id">
+    {% for vendor in vendors %}
+        <option value="{{ vendor.id }}"> {{ vendor.name }}</option>
+    {% endfor %}
+</select>
+</div>-->
+ <input type="submit" value="Add" />
+</form>

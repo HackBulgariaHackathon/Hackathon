@@ -1,0 +1,9 @@
+<h1>All Software</h1>
+{% for software in all_software %}
+<h2>
+    <a href="show_software?software_id={{ software.id }}">{{ software.name }}</a>
+</h2>
+{% endfor %}
+<p>
+    <a href="add_software"><button>Add new software</button></a>
+</p>

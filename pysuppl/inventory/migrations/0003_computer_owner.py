@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='computer',
             name='owner',
-            field=models.ForeignKey(to=settings.AUTH_USER_MODEL, default=datetime.datetime(2015, 5, 28, 9, 45, 16, 872212, tzinfo=utc)),
+            field=models.ForeignKey(to=settings.AUTH_USER_MODEL, default=1),
             preserve_default=False,
         ),
     ]

@@ -1,6 +1,10 @@
 <h1>All computers:</h1>
 
 {% for computer in computers %}
-<h2><a href="show_computer?computer_id={{ computer.id }}">{{ computer.name }}</a></h2>
+<h2>
+    <a href="show_computer?computer_id={{ computer.id }}">{{ computer.name }}</a>
+</h2>
 {% endfor %}
-<p><a href="new_computer">Add new computer</a>
+<p>
+    <a href="new_computer"><button>Add new computer</button></a>
+</p>
