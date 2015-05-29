@@ -19,6 +19,7 @@ from network_site import urls as network_urls
 from vehicle import urls as vehicle_urls
 from docs import urls as docs_urls
 from wiki import urls as wiki_urls
+from inventory import urls as inventory_urls
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -28,6 +29,8 @@ urlpatterns = [
     url(r'^vehicle/', include(vehicle_urls)),
     url(r'^docs/', include(docs_urls)),
     url(r'^wiki/', include(wiki_urls)),
+    url(r'^inventory/', include(inventory_urls)),
+
 ] + static("/static/", document_root="/home/rastamandito/Documents/Django_laptop/Hackathon/pysuppl/pysuppl/static/ ")
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
