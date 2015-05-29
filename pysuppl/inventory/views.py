@@ -73,21 +73,21 @@ def get_software_info(request):
     return render(request, "software.html", locals())
 
 
-def new_software(request):
+def add_software(request):
     vendors = Vendor.objects.all()
     all_license = License.objects.all()
+
+    if request.POST:
+        software_name = request.POST.get("software_name")
+        description = request.POST.get("description")
+        vendor_id = Vendor.objects.get(pk=request.POST.get("vendor_id"))
+        license = License.objects.get(pk=request.POST.get("license_id"))
+        software = Software(name=software_name, description=description,
+                            vendor_id=vendor_id, license_id=license)
+        software.save()
+        return redirect('/inventory/all_software')
+
     return render(request, "add_software.html", locals())
-
-
-def add_software(request):
-    software_name = request.POST.get("software_name")
-    description = request.POST.get("description")
-    vendor_id = Vendor.objects.get(pk=request.POST.get("vendor_id"))
-    license = License.objects.get(pk=request.POST.get("license_id"))
-    software = Software(name=software_name, description=description,
-                        vendor_id=vendor_id, license_id=license)
-    software.save()
-    return redirect('/inventory/all_software')
 
 
 def delete_software(request, software_id):
